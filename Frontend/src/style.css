@@ -1178,3 +1178,71 @@
     font-size: 9px;
   }
 }
+
+/* 2.1.1 Incoming-Order-Display
+ * Incoming order cards, customer details, order type at ordered items.
+ * Kopya mula sa Frontend/src/style.css para sa contribution review.
+ */
+
+.kitchen-order {
+  background: #fff;
+  border: 1px solid #eae6dd;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 5px 16px #3b2b1c0b;
+}
+
+.kitchen-order-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kitchen-order-head b {
+  font-size: 13px;
+  color: #a66a45;
+}
+
+.kitchen-order-head span {
+  font-size: 10px;
+  color: #a29a91;
+}
+
+.kitchen-order h3 {
+  font-size: 15px;
+  margin: 13px 0;
+}
+
+.kitchen-items {
+  border-top: 1px dashed #e7ded3;
+  padding: 13px 0;
+  margin-top: 15px;
+}
+
+.kitchen-items>div {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  padding: 6px 0;
+  color: #5a5047;
+  line-height: 1.5;
+}
+
+.kitchen-items strong {
+  color: #a66a45;
+  white-space: nowrap;
+}
+
+.kitchen-order-kind {
+  display: inline-flex;
+  align-items: center;
+  background: #f6eee5;
+  border: 1px solid #e9dacb;
+  border-radius: 99px;
+  padding: 5px 11px;
+  color: #80563b;
+  font-size: 11px;
+  font-weight: 800;
+  margin: -4px 0 2px;
+}
+
