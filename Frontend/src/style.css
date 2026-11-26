@@ -587,3 +587,488 @@
     height: 52px;
   }
 }
+
+/* 1.1.2 Sales-Transaction-Processing
+ * Checkout panel, cart, order type, payment at receipt.
+ * Kopya mula sa Frontend/src/style.css para sa contribution review.
+ */
+
+.checkout-panel {
+  background: #fff;
+  border: 1px solid #eee9e2;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px #62412614;
+  position: sticky;
+  top: 21px;
+  overflow: hidden;
+}
+
+.checkout-top {
+  padding: 23px 23px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1ede7;
+}
+
+.checkout-top .section-eyebrow {
+  margin-bottom: 7px;
+}
+
+.checkout-top h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: 23px;
+  margin: 0;
+}
+
+.checkout-count {
+  background: #f5eee7;
+  color: #91694d;
+  border-radius: 30px;
+  padding: 7px 11px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #675e56;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.checkout-panel>.field-label {
+  margin: 18px 23px 6px;
+}
+
+.field-label input,.modal-form input,.modal-form select,.sales-filters input {
+  height: 43px;
+  border: 1px solid #e6dfd6;
+  border-radius: 9px;
+  padding: 0 13px;
+  background: #fff;
+  width: 100%;
+  color: #43352b;
+}
+
+.field-label input:focus,.modal-form input:focus,.modal-form select:focus {
+  border-color: #c48a64;
+}
+
+.checkout-lines {
+  max-height: 350px;
+  min-height: 175px;
+  overflow-y: auto;
+  padding: 10px 23px;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 30px 14px;
+  color: #989088;
+}
+
+.cart-empty>div {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+
+.cart-empty strong {
+  display: block;
+  font-size: 12px;
+  color: #63564b;
+}
+
+.cart-empty p {
+  font-size: 11px;
+  line-height: 1.55;
+  margin: 9px auto 0;
+  max-width: 220px;
+}
+
+.cart-line {
+  display: flex;
+  gap: 10px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1eee8;
+}
+
+.cart-line:last-child {
+  border: 0;
+}
+
+.cart-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f8f1e7;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.cart-line-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-line-main>strong {
+  font-size: 12px;
+  line-height: 1.4;
+  display: block;
+}
+
+.cart-line-main>small {
+  display: block;
+  font-size: 10px;
+  color: #a19385;
+  margin-top: 3px;
+}
+
+.quantity-step {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 12px;
+}
+
+.quantity-step button {
+  height: 25px;
+  width: 25px;
+  border-radius: 7px;
+  background: #f4f0e9;
+  border: 0;
+  display: grid;
+  place-items: center;
+  color: #6d5646;
+}
+
+.quantity-step span {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cart-line-price {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cart-line-price b {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.cart-line-price button {
+  border: 0;
+  background: transparent;
+  color: #b8a9a0;
+  padding: 3px;
+}
+
+.cart-line-price button:hover {
+  color: #b34939;
+}
+
+.payment-area {
+  background: #fbf9f5;
+  padding: 20px 23px 22px;
+  border-top: 1px solid #ede8e1;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 12px;
+}
+
+.bill-row>span:first-child {
+  color: #867a70;
+}
+
+.bill-row.minor {
+  font-size: 11px;
+}
+
+.bill-row.total {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.bill-row.total span {
+  color: #312720;
+}
+
+.bill-row.total strong {
+  font-size: 25px;
+  color: #8e5739;
+}
+
+.bill-divider {
+  border-top: 1px dashed #d8c7b8;
+  margin: 11px 0;
+}
+
+.payment-area .field-label {
+  margin-top: 16px;
+}
+
+.bill-row.change {
+  padding-top: 14px;
+  color: #4b8b64;
+}
+
+.bill-row.change strong {
+  color: #42885f;
+}
+
+.checkout-button {
+  width: 100%;
+  height: 47px;
+  margin-top: 15px;
+}
+
+.payment-area .btn-link {
+  display: block;
+  margin: 8px auto -7px;
+}
+
+.receipt-paper {
+  padding: 18px;
+  background: #faf8f4;
+  border: 1px dashed #d4bfae;
+  border-radius: 9px;
+}
+
+.receipt-head {
+  text-align: center;
+  font-family: 'Playfair Display',serif;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.receipt-head small {
+  font-size: 11px;
+  font-family: 'DM Sans',sans-serif;
+  display: block;
+  color: #9a8d80;
+  margin: 6px;
+}
+
+.receipt-order {
+  text-align: center;
+  font-size: 11px;
+  color: #766658;
+  margin: 19px 0;
+}
+
+.receipt-foot {
+  text-align: center;
+  margin-top: 19px;
+  color: #9c806b;
+  font-size: 11px;
+}
+
+@media(max-width:780px) {
+  .checkout-panel {
+    position: static;
+    max-width: 100%;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden!important;
+  }
+  #print-receipt,#print-receipt * {
+    visibility: visible!important;
+  }
+  #print-receipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    color: #111;
+    border: 0;
+  }
+  .modal-backdrop {
+    background: #fff;
+  }
+}
+
+.checkout-panel > .field-label select,
+.field-label select {
+  height: 45px;
+  border: 1px solid #e6dfd6;
+  border-radius: 9px;
+  padding: 0 13px;
+  background: #fff;
+  color: #43352b;
+  font: inherit;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.field-label select:focus {
+  outline: 2px solid #c48a6466;
+  outline-offset: 1px;
+  border-color: #c48a64;
+}
+
+.receipt-paper {
+  font-family: Arial,Helvetica,sans-serif;
+  background: #fff;
+  color: #332d27;
+  border: 1px dashed #cfb69e;
+  border-radius: 6px;
+  padding: 20px;
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.receipt-head {
+  text-align: center;
+  font-family: Georgia,serif;
+  font-size: 24px;
+  letter-spacing: .12em;
+}
+
+.receipt-head small {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 11px;
+  letter-spacing: normal;
+  color: #706355;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.receipt-divider {
+  border-top: 1px dashed #baa99a;
+  margin: 15px 0;
+}
+
+.receipt-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12px;
+}
+
+.receipt-meta>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.receipt-meta span,.receipt-items-title {
+  font-size: 10px;
+  letter-spacing: .07em;
+  color: #83766c;
+  font-weight: 700;
+}
+
+.receipt-meta b {
+  font-weight: 800;
+  text-align: right;
+}
+
+.receipt-items-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 12px;
+}
+
+.receipt-item>div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.receipt-item small {
+  color: #82776e;
+  font-size: 11px;
+}
+
+.receipt-item>strong {
+  white-space: nowrap;
+}
+
+.receipt-foot {
+  font-size: 12px;
+  color: #55493d;
+  line-height: 1.6;
+}
+
+.receipt-foot small {
+  display: block;
+  font-size: 10px;
+  color: #897d72;
+  margin-top: 4px;
+}
+
+@media print {
+  @page {
+    margin: 4mm;
+    size: auto;
+  }
+  html,body {
+    width: auto!important;
+    min-height: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+    background: #fff!important;
+  }
+  body * {
+    visibility: hidden!important;
+  }
+  #print-receipt,#print-receipt * {
+    visibility: visible!important;
+  }
+  #print-receipt {
+    position: fixed!important;
+    inset: 0 auto auto 0!important;
+    display: block!important;
+    width: 72mm!important;
+    max-width: 72mm!important;
+    min-width: 0!important;
+    margin: 0!important;
+    padding: 2mm!important;
+    box-sizing: border-box!important;
+    border: 0!important;
+    border-radius: 0!important;
+    background: #fff!important;
+    color: #000!important;
+    box-shadow: none!important;
+    font-family: Arial,Helvetica,sans-serif!important;
+  }
+  #print-receipt * {
+    color: #000!important;
+    box-shadow: none!important;
+  }
+  #print-receipt .receipt-divider {
+    border-color: #777!important;
+  }
+  .modal-backdrop,.modal-card {
+    overflow: visible!important;
+    box-shadow: none!important;
+  }
+}
+
