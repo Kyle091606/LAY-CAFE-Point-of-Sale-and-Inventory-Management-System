@@ -321,3 +321,269 @@
     font-size: 18px;
   }
 }
+
+/* 1.1.1 Product-Selection-and-Order-Entry
+ * Cashier header, product catalog, categories at product cards.
+ * Kopya mula sa Frontend/src/style.css para sa contribution review.
+ */
+
+.pos-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 340px;
+  gap: 25px;
+  align-items: start;
+}
+
+.catalog {
+  min-width: 0;
+}
+
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 19px;
+}
+
+.category-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 13px;
+  margin-bottom: 13px;
+}
+
+.category-tab {
+  white-space: nowrap;
+  border-radius: 30px;
+  border: 1px solid #e9e0d6;
+  background: #fff;
+  color: #76695e;
+  padding: 10px 15px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.category-tab.active {
+  color: #fff;
+  background: #443128;
+  border-color: #443128;
+}
+
+.category-tab:hover:not(.active) {
+  border-color: #c8a58b;
+  background: #fdf8f2;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 15px;
+}
+
+.product-card {
+  padding: 0;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #eee9e2;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .2s;
+  min-width: 0;
+  box-shadow: 0 5px 15px #6d4a2810;
+  color: #352920;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: #d7af93;
+  box-shadow: 0 11px 26px #6d4a2820;
+}
+
+.product-card.chosen {
+  border-color: #c3855f;
+}
+
+.product-art {
+  height: 105px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#f7e9d8 5%,#fbf7ef 92%);
+  position: relative;
+}
+
+.product-card:nth-child(4n+2) .product-art {
+  background: linear-gradient(135deg,#ece8d8,#faf7ef);
+}
+
+.product-card:nth-child(4n+3) .product-art {
+  background: linear-gradient(135deg,#f4e0d5,#fff5ed);
+}
+
+.product-card:nth-child(4n+4) .product-art {
+  background: linear-gradient(135deg,#efe9e4,#fbfaf5);
+}
+
+.product-art>span {
+  font-size: 49px;
+  filter: drop-shadow(0 8px 10px #a1744233);
+}
+
+.product-qty {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  border-radius: 50%;
+  height: 24px;
+  min-width: 24px;
+  padding: 3px;
+  background: #9c633e;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+}
+
+.product-card-copy {
+  padding: 15px 15px 14px;
+}
+
+.product-card-copy small {
+  font-size: 10px;
+  color: #a58f7c;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.product-card-copy>strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.42;
+  min-height: 34px;
+}
+
+.product-card-copy>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+
+.product-card-copy b {
+  color: #a46340;
+  font-size: 14px;
+}
+
+.add-round {
+  background: #f8f1ea;
+  color: #a16e4c;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+@media(max-width:1360px) {
+  .pos-grid {
+    grid-template-columns: minmax(0,1fr) 318px;
+    gap: 17px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:780px) {
+  .pos-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:520px) {
+  .product-art {
+    height: 85px;
+  }
+  .product-art>span {
+    font-size: 39px;
+  }
+  .product-card-copy {
+    padding: 11px;
+  }
+  .product-card-copy>strong {
+    font-size: 11px;
+  }
+  .category-tab {
+    padding: 9px 11px;
+  }
+  .catalog-toolbar {
+    flex-wrap: wrap;
+  }
+  .catalog-toolbar .search-field {
+    max-width: none;
+    flex-basis: 100%;
+  }
+}
+
+.cashier-brand-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.cashier-heading-left {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+}
+
+.cashier-heading-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 1px solid #e9ddcf;
+  box-shadow: 0 6px 18px rgba(71,47,28,.08);
+}
+
+.cashier-brand-head h1 {
+  font-family: 'Playfair Display',Georgia,serif;
+  font-size: 32px;
+  letter-spacing: -.025em;
+  font-weight: 650;
+  margin: 4px 0 4px;
+  color: #3c2d22;
+}
+
+.cashier-brand-head p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  color: #96887c;
+}
+
+.cashier-brand-head .heading-counter {
+  white-space: nowrap;
+}
+
+@media(max-width:700px) {
+  .cashier-brand-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .cashier-brand-head h1 {
+    font-size: 26px;
+  }
+  .cashier-heading-logo {
+    width: 52px;
+    height: 52px;
+  }
+}
